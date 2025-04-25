@@ -11,7 +11,7 @@ st.markdown("""
 """)
 
 st.markdown(
-    '<a href="https://autosales-lvhamomeiakzjtkdyzwze6.streamlit.app/" style="font-size:32px;">請點擊這裡演示線上行銷售分析報告</a>',
+    '<a href="https://autosales-lvhamomeiakzjtkdyzwze6.streamlit.app/" style="font-size:32px;">請點擊這裡演示線上分析報告</a>',
     unsafe_allow_html=True
 )
 st.markdown("""
