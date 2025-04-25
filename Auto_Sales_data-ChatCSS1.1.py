@@ -9,6 +9,7 @@ st.set_page_config(page_title="汽車銷售儀表板", layout="wide")
 st.markdown("""
 - **設計: 葉春華 V1.1**
 """)
+st.markdown("[請點擊這裡進行查閱](https://autosales-lvhamomeiakzjtkdyzwze6.streamlit.app/)")
 st.markdown("""
     <style>
         .main {background-color: #f5f7fa;}
