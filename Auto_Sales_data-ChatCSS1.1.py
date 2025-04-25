@@ -7,9 +7,13 @@ import numpy as np
 # 基本設定
 st.set_page_config(page_title="汽車銷售儀表板", layout="wide")
 st.markdown("""
-- **設計: 葉春華 V1.1**
+- **設計: 葉春華 V1.2**
 """)
-st.markdown("[請點擊這裡進行查閱](https://autosales-lvhamomeiakzjtkdyzwze6.streamlit.app/)")
+
+st.markdown(
+    '<a href="https://autosales-lvhamomeiakzjtkdyzwze6.streamlit.app/" style="font-size:32px;">請點擊這裡演示線上行銷售分析報告</a>',
+    unsafe_allow_html=True
+)
 st.markdown("""
     <style>
         .main {background-color: #f5f7fa;}
@@ -29,7 +33,7 @@ df = load_data()
 
 # 標題與說明
 st.title('🚗 汽車銷售資料分析儀表板')
-st.subheader('設計者：葉春華｜版本：V1.0')
+st.subheader('設計者：葉春華｜版本：V1.2')
 st.markdown("""
 這個互動式儀表板協助您洞察汽車銷售趨勢、產品表現、顧客行為、市場分布與行銷效果，作為商業決策的依據。
 ---
