@@ -33,7 +33,7 @@ df = load_data()
 
 # 標題與說明
 st.title('🚗 汽車銷售資料分析儀表板')
-st.subheader('設計者：葉春華｜版本：V1.2')
+st.subheader('設計者：Aries Yeh｜版本：V1.2')
 st.markdown("""
 這個互動式儀表板協助您洞察汽車銷售趨勢、產品表現、顧客行為、市場分布與行銷效果，作為商業決策的依據。
 ---
