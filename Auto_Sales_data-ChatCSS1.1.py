@@ -7,7 +7,7 @@ import numpy as np
 # 基本設定
 st.set_page_config(page_title="汽車銷售儀表板", layout="wide")
 st.markdown("""
-- **設計: 葉春華 V1.2**
+- **設計: Aries Yeh V1.2**
 """)
 
 st.markdown(
