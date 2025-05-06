@@ -15,6 +15,10 @@ st.markdown(
     '<a href="https://auto-sales2-cb6fevkyg2ou5t9fd53sov.streamlit.app/" style="font-size:32px;">請點擊這裡👉🏻演示線上🚗 汽車銷售進階圖解式分析報告 1</a>',
     unsafe_allow_html=True
 )
+st.markdown("""
+這個互動式儀表板協助您洞察汽車銷售趨勢、產品表現、顧客行為、市場分布與行銷效果，作為商業決策的依據。
+---
+""")
 
 st.markdown("""
     <style>
@@ -32,14 +36,6 @@ def load_data():
     return df
 
 df = load_data()
-
-# 標題與說明
-st.title('🚗 汽車銷售資料分析儀表板')
-st.subheader('設計者：Aries Yeh｜版本：V1.2')
-st.markdown("""
-這個互動式儀表板協助您洞察汽車銷售趨勢、產品表現、顧客行為、市場分布與行銷效果，作為商業決策的依據。
----
-""")
 
 # 1. 銷售趨勢分析
 st.header('📈 1. 銷售趨勢分析')
