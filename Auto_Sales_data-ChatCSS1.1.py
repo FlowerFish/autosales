@@ -38,7 +38,7 @@ def load_data():
 df = load_data()
 
 # 1. 銷售趨勢分析
-st.header('📈 1. 銷售趨勢分析')
+st.header('📈 1. 銷售趨勢分析 折線圖 (Line Chart)')
 df['Month'] = df['ORDERDATE'].dt.to_period('M')
 sales_trend = df.groupby('Month')['SALES'].sum().reset_index()
 sales_trend['Month'] = sales_trend['Month'].astype(str)
@@ -63,14 +63,14 @@ fig1.update_layout(width=1000, height=500, paper_bgcolor='lightblue', plot_bgcol
 st.plotly_chart(fig1, use_container_width=True)
 
 # 2. 產品表現分析
-st.header('📊 2. 產品表現分析')
+st.header('📊 2. 產品表現分析 柱狀圖 (Bar Chart)')
 product_sales = df.groupby('PRODUCTLINE')['SALES'].sum().reset_index()
 fig2 = px.bar(product_sales, x='PRODUCTLINE', y='SALES', title='產品線銷售表現', color='PRODUCTLINE', color_discrete_sequence=px.colors.sequential.Greens)
 fig2.update_layout(width=1000, height=500)
 st.plotly_chart(fig2, use_container_width=True)
 
 # 3. 顧客行為分析
-st.header('🔍 3. 顧客行為分析')
+st.header('🔍 3. 顧客行為分析 散點圖 (Scatter Plot)')
 customer_behavior = df.groupby('CUSTOMERNAME').agg({'QUANTITYORDERED': 'sum', 'SALES': 'sum'}).reset_index()
 fig3 = px.scatter(customer_behavior, x='QUANTITYORDERED', y='SALES', color='CUSTOMERNAME', title='顧客訂單量與銷售額關係', color_discrete_sequence=px.colors.sequential.Reds)
 fig3.add_hline(y=customer_behavior['SALES'].mean(), line_dash='dash', line_color='black', annotation_text='平均銷售額')
@@ -80,27 +80,27 @@ fig3.add_trace(go.Scatter(x=customer_behavior['QUANTITYORDERED'], y=np.poly1d(tr
 st.plotly_chart(fig3, use_container_width=True)
 
 # 4. 地理分布分析
-st.header('🌍 4. 地理分布分析')
+st.header('🌍 4. 地理分布分析 地圖圖 (Choropleth Map)')
 country_sales = df.groupby('COUNTRY')['SALES'].sum().reset_index()
 fig4 = px.choropleth(country_sales, locations='COUNTRY', locationmode='country names', color='SALES', title='全球銷售分布', color_continuous_scale=px.colors.sequential.Purples)
 fig4.update_layout(width=1000, height=500)
 st.plotly_chart(fig4, use_container_width=True)
 
 # 5. 價格策略分析
-st.header('💰 5. 價格策略分析')
+st.header('💰 5. 價格策略分析 箱形圖 (Box Plot)')
 fig5 = px.box(df, x='DEALSIZE', y='PRICEEACH', title='交易規模與價格關係', color='DEALSIZE', color_discrete_sequence=px.colors.sequential.Oranges)
 fig5.update_layout(width=1000, height=500)
 st.plotly_chart(fig5, use_container_width=True)
 
 # 6. 庫存管理分析
-st.header('📦 6. 庫存管理分析')
+st.header('📦 6. 庫存管理分析 熱力圖 (Heatmap)')
 product_quantity = df.groupby(['PRODUCTCODE', 'PRODUCTLINE'])['QUANTITYORDERED'].sum().reset_index()
 fig6 = px.density_heatmap(product_quantity, x='PRODUCTCODE', y='PRODUCTLINE', z='QUANTITYORDERED', title='產品訂單量熱力圖', color_continuous_scale='YlOrRd')
 fig6.update_layout(width=1000, height=500)
 st.plotly_chart(fig6, use_container_width=True)
 
 # 7. 市場競爭分析
-st.header('📌 7. 市場競爭分析')
+st.header('📌 7. 市場競爭分析 雷達圖 (Radar Chart)')
 product_competition = df.groupby('PRODUCTLINE')['SALES'].mean().reset_index()
 fig7 = go.Figure()
 fig7.add_trace(go.Scatterpolar(r=product_competition['SALES'], theta=product_competition['PRODUCTLINE'], fill='toself', fillcolor='#00BFFF', opacity=0.6, line=dict(color='#00BFFF', width=2)))
@@ -108,14 +108,14 @@ fig7.update_layout(polar=dict(radialaxis=dict(visible=True, tickfont=dict(color=
 st.plotly_chart(fig7, use_container_width=True)
 
 # 8. 營銷效果分析
-st.header('📢 8. 營銷效果分析')
+st.header('📢 8. 營銷效果分析 柱狀圖 (Bar Chart)')
 marketing_effect = df.groupby('DEALSIZE')['SALES'].sum().reset_index()
 fig8 = px.bar(marketing_effect, x='DEALSIZE', y='SALES', title='營銷活動銷售效果', color='DEALSIZE', color_discrete_sequence=px.colors.sequential.Greens)
 fig8.update_layout(width=1000, height=500)
 st.plotly_chart(fig8, use_container_width=True)
 
 # 9. 顧客反饋分析
-st.header('❤️ 9. 顧客反饋分析')
+st.header('❤️ 9. 顧客反饋分析 圓餅圖 (Pie Chart)')
 feedback = df['STATUS'].value_counts().reset_index()
 feedback.columns = ['STATUS', 'COUNT']
 fig9 = px.pie(feedback, values='COUNT', names='STATUS', title='顧客滿意度分析', color_discrete_sequence=px.colors.sequential.Reds)
