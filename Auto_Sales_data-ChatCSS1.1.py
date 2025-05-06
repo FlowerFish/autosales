@@ -5,7 +5,8 @@ import streamlit as st
 import numpy as np
 
 # 基本設定
-st.set_page_config(page_title="汽車銷售進階圖解報告", layout="wide")
+st.set_page_config(layout="wide", page_title="汽車銷售進階圖解報告 1")
+st.title("🚗 汽車銷售進階圖解式分析報告 1")
 st.markdown("""
 - **設計: Aries Yeh V1.2**
 """)
