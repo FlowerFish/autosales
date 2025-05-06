@@ -12,9 +12,10 @@ st.markdown("""
 """)
 
 st.markdown(
-    '<a href="https://autosales-lvhamomeiakzjtkdyzwze6.streamlit.app/" style="font-size:64px;">直接看線上分析報告-👉 👉 👉請點我👈 👈 👈</a>',
+    '<a href="https://auto-sales2-cb6fevkyg2ou5t9fd53sov.streamlit.app/" style="font-size:32px;">請點擊這裡👉🏻演示線上🚗 汽車銷售進階圖解式分析報告 1</a>',
     unsafe_allow_html=True
 )
+
 st.markdown("""
     <style>
         .main {background-color: #f5f7fa;}
